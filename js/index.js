@@ -120,52 +120,52 @@ function createCard(cardMaterials){
     cardTitle.classList.add("card__title");
     cardTitle.innerText = cardMaterials.header;
 
-    let cardImage = document.createElement("img");
+    const cardImage = document.createElement("img");
     cardImage.className = "card__image";
     cardImage.src = './img/' + cardMaterials.houseImg;
 
-    let cardSquare = document.createElement("p");
+    const cardSquare = document.createElement("p");
     cardSquare.classList.add("card__element");
     cardSquare.innerHTML = 'Площадь: <b>'+ cardMaterials.square + '</b>';
 
-    let cardSize = document.createElement("p");
+    const cardSize = document.createElement("p");
     cardSize.classList.add("card__element");
     cardSize.innerHTML = 'Размеры: <b>'+ cardMaterials.size +'</b>';
 
-    let cardConstruction = document.createElement("p");
+    const cardConstruction = document.createElement("p");
     cardConstruction.classList.add("card__element");
     cardConstruction.innerHTML = 'Срок стройки: <b>'+ cardMaterials.construction +'</b>';
 
-    let cardRoomNumb = document.createElement("p");
+    const cardRoomNumb = document.createElement("p");
     cardRoomNumb.classList.add("card__element");
     cardRoomNumb.innerHTML = 'Комнат: <b>'+ cardMaterials.roomNumb +'</b>';
 
-    let cardBigPrice = document.createElement("ul");
+    const cardBigPrice = document.createElement("ul");
     cardBigPrice.className = "card__price";
 
-    let cardType = document.createElement("li");
+    const cardType = document.createElement("li");
     cardType.classList.add("card__li");
     cardType.innerHTML = 'Тип дома: <b>' + cardMaterials.houseType + '</b>'
     cardBigPrice.appendChild(cardType);
 
-    let cardPrice = document.createElement("li");
+    const cardPrice = document.createElement("li");
     cardPrice.classList.add("card__li");
     cardPrice.innerHTML = 'Стоимость: <b>от <span class="card__li_strong">' + cardMaterials.price + '</span> руб</b>';
     cardBigPrice.appendChild(cardPrice);
 
-    let cardBtn = document.createElement("div");
+    const cardBtn = document.createElement("div");
     cardBtn.classList.add("card__button");
     cardBtn.innerText = "СМОТРЕТЬ ПРОЕКТЫ >";
 
-    let cardIndividual = document.createElement("div");
+    const cardIndividual = document.createElement("div");
     cardIndividual.className = "card__individual";
 
-    let cardCheck = document.createElement("img");
+    const cardCheck = document.createElement("img");
     cardCheck.className = "card__check_img";
     cardCheck.src = "./img/check.svg";
     cardIndividual.appendChild(cardCheck);
 
-    let cardIndividualItem = document.createElement("p");
+    const cardIndividualItem = document.createElement("p");
     cardIndividualItem.classList.add("card__individual_item");
     cardIndividualItem.innerText = "Индивидуальная планировка дома";
     cardIndividual.appendChild(cardIndividualItem);
