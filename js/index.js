@@ -111,46 +111,46 @@ function showAllData(showHouse){
     }
 }
 
-function createCard(cardData){
+function createCard(cardMaterials){
 
     const card = document.createElement("div");
     card.className = "card";
 
     const cardTitle = document.createElement("h3");
     cardTitle.classList.add("card__title");
-    cardTitle.innerText = cardData.header;
+    cardTitle.innerText = cardMaterials.header;
 
     let cardImage = document.createElement("img");
     cardImage.className = "card__image";
-    cardImage.src = './img/' + cardData.houseImg;
+    cardImage.src = './img/' + cardMaterials.houseImg;
 
     let cardSquare = document.createElement("p");
     cardSquare.classList.add("card__element");
-    cardSquare.innerHTML = 'Площадь: <b>'+ cardData.square + '</b>';
+    cardSquare.innerHTML = 'Площадь: <b>'+ cardMaterials.square + '</b>';
 
     let cardSize = document.createElement("p");
     cardSize.classList.add("card__element");
-    cardSize.innerHTML = 'Размеры: <b>'+ cardData.size +'</b>';
+    cardSize.innerHTML = 'Размеры: <b>'+ cardMaterials.size +'</b>';
 
     let cardConstruction = document.createElement("p");
     cardConstruction.classList.add("card__element");
-    cardConstruction.innerHTML = 'Срок стройки: <b>'+ cardData.construction +'</b>';
+    cardConstruction.innerHTML = 'Срок стройки: <b>'+ cardMaterials.construction +'</b>';
 
     let cardRoomNumb = document.createElement("p");
     cardRoomNumb.classList.add("card__element");
-    cardRoomNumb.innerHTML = 'Комнат: <b>'+ cardData.roomNumb +'</b>';
+    cardRoomNumb.innerHTML = 'Комнат: <b>'+ cardMaterials.roomNumb +'</b>';
 
     let cardBigPrice = document.createElement("ul");
     cardBigPrice.className = "card__price";
 
     let cardType = document.createElement("li");
     cardType.classList.add("card__li");
-    cardType.innerHTML = 'Тип дома: <b>' + cardData.houseType + '</b>'
+    cardType.innerHTML = 'Тип дома: <b>' + cardMaterials.houseType + '</b>'
     cardBigPrice.appendChild(cardType);
 
     let cardPrice = document.createElement("li");
     cardPrice.classList.add("card__li");
-    cardPrice.innerHTML = 'Стоимость: <b>от <span class="card__li_strong">' + cardData.price + '</span> руб</b>';
+    cardPrice.innerHTML = 'Стоимость: <b>от <span class="card__li_strong">' + cardMaterials.price + '</span> руб</b>';
     cardBigPrice.appendChild(cardPrice);
 
     let cardBtn = document.createElement("div");
@@ -190,14 +190,14 @@ function clearBox(box){
 function searchingHouseType(houseType){
     clearBox(document.querySelector(".ataman_projects"));
 
-    let fHouses = houses.filter(function(item){
+    let houseFiltration = houses.filter(function(item){
         return item.houseType == houseType;
     });
 
-    let temp = null;
-    for (let i = 0; i < fHouses.length; i++){
-        temp = createCard(fHouses[i]);
-        document.querySelector(".ataman_projects").appendChild(temp);
+    let sub = null;
+    for (let i = 0; i < houseFiltration.length; i++){
+        sub = createCard(houseFiltration[i]);
+        document.querySelector(".ataman_projects").appendChild(sub);
     }
 }
 
